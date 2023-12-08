@@ -22,11 +22,11 @@ const Welcome = () => {
             </div>
             <div className='flex justify-center'>
                 <div className="bg-white w-auto flex items-center gap-5 px-4 py-3 text-2xl rounded-t-md text-line">
-                    <a href=""><FontAwesomeIcon icon="fa-brands fa-github" /></a>
-                    <a href=""><FontAwesomeIcon icon="fa-brands fa-linkedin" /></a>
-                    <a href=""><FontAwesomeIcon icon="fa-brands fa-square-instagram" /></a>
-                    <a href=""><FontAwesomeIcon icon="fa-brands fa-square-facebook" /></a>
-                    <a href=""><FontAwesomeIcon icon="fa-brands fa-line" /></a>
+                    <a href="https://www.github.com/Kasitphoom" target='_blank' rel="noreferrer"><FontAwesomeIcon icon="fa-brands fa-github" /></a>
+                    <a href="https://www.linkedin.com/in/kasitphoom/" target='_blank' rel="noreferrer"><FontAwesomeIcon icon="fa-brands fa-linkedin" /></a>
+                    <a href="https://www.instagram.com/kasitphoom/" target='_blank' rel="noreferrer"><FontAwesomeIcon icon="fa-brands fa-square-instagram" /></a>
+                    <a href="https://www.facebook.com/phoom.krub.10/" target='_blank' rel="noreferrer"><FontAwesomeIcon icon="fa-brands fa-square-facebook" /></a>
+                    <a href="https://line.me/ti/p/~phoomykitty" target='_blank' rel="noreferrer"><FontAwesomeIcon icon="fa-brands fa-line" /></a>
                 </div>
             </div>
         </div>
