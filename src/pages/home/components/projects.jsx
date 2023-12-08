@@ -46,7 +46,7 @@ const projects = () => {
                     <img src={project1} alt="" className='rounded-md h-auto w-full object-cover'/>
                 </div>
                 <div className="project-info flex flex-col gap-8 lg:max-w-[50%]">
-                    <div className="project-name flex items-center justify-between" >
+                    <div className="project-name flex items-center justify-between gap-2" >
                         <h3 className='font-bold text-lg text-line dark:text-white'>Yothinburana School International Programme Website</h3>
                         <FontAwesomeIcon icon="fa-solid fa-caret-down" className='text-white dark:text-primaryDark bg-primaryDark dark:bg-white p-2  flex justify-center items-center rounded-lg lg:hidden' onClick={ToggleProjectHandle}/>
                     </div>
@@ -94,7 +94,7 @@ const projects = () => {
                     <img src={project2} alt="" className='rounded-md h-auto w-full object-cover'/>
                 </div>
                 <div className="project-info flex flex-col gap-8 lg:max-w-[50%]">
-                    <div className="project-name flex gap-1 text-line dark:text-white">
+                    <div className="project-name flex gap-2 text-line dark:text-white">
                         <h3 className='font-bold text-lg text-line dark:text-white'>Software Engineering Online Meeting and Learning Platform</h3>
                         <FontAwesomeIcon icon="fa-solid fa-caret-down" className='text-white dark:text-primaryDark bg-primaryDark dark:bg-white p-2  flex justify-center items-center rounded-lg lg:hidden' onClick={ToggleProjectHandle}/>
                     </div>
