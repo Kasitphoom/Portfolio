@@ -26,7 +26,7 @@ const projects = () => {
         }
     }
   return (
-    <section className='p-5'>
+    <section className='p-5' id='project'>
         <h1 className='
             text-primaryDark text-2xl text-center font-bold mb-3
             dark:text-white

@@ -70,24 +70,27 @@ const Nav = () => {
                 md:flex
             '
             >
-                <a href="/">Home</a>
-                <a href="#">About</a>
-                <a href="#">Projects</a>
-                <a href="#">Contact</a>
+                <a href="#">Home</a>
+                <a href="#about">About</a>
+                <a href="#project">Projects</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
         <div className="md:hidden text-4xl" onClick={MenuClickHandle}>
             <FontAwesomeIcon icon="fa-solid fa-bars"/>
         </div>
-        <div className="h-[calc(100vh-6rem)] bg-darkWhite dark:bg-lightBgDark w-screen absolute z-10 top-24 -left-full transition-all ease-in-out duration-300" id='responsive-menu'>
+        <div className="
+            h-[calc(100vh-6rem)] bg-darkWhite dark:bg-lightBgDark w-screen absolute z-10 top-24 -left-full transition-all ease-in-out duration-300
+            md:hidden
+        " id='responsive-menu'>
             <div className='
                 flex flex-col gap-12 justify-center items-center h-full text-2xl font-bold
             '
             >
-                <a href="/">Home</a>
-                <a href="#">About</a>
-                <a href="#">Projects</a>
-                <a href="#">Contact</a>
+                <a href="#" onClick={MenuClickHandle}>Home</a>
+                <a href="#about" onClick={MenuClickHandle}>About</a>
+                <a href="#project" onClick={MenuClickHandle}>Projects</a>
+                <a href="#contact" onClick={MenuClickHandle}>Contact</a>
             </div>
         </div>
     </nav>

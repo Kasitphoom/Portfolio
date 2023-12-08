@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import Welcome from './components/welcome'
 import About from './components/about'
 import Projects from './components/projects'
+import Contact from './components/contact'
 
 const HomePage = () => {
 
@@ -13,6 +14,7 @@ const HomePage = () => {
             <Welcome />
             <About />
             <Projects />
+            <Contact />
         </>
     )
 }
