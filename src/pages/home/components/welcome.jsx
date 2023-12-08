@@ -10,7 +10,7 @@ const Welcome = () => {
   return (
     <section className='relative'>
         
-        <div className="h-[calc(100vh-6rem)] w-full flex flex-col justify-between px-4">
+        <div className="h-[calc(100svh-6rem)] w-full flex flex-col justify-between px-4">
             <div className="flex flex-col gap-12 justify-center items-center grow">
                 <h1 className="text-4xl font-bold text-white text-center">
                     HELLO I'M KASITPHOOM THOWONGS

@@ -15,7 +15,9 @@ const about = () => {
         <div className="w-24 h-2 bg-line mx-auto rounded-full"></div>
         <div className="
             flex flex-col gap-20 py-20 text-textLight dark:text-textDark
-            md:flex-row md:gap-20 md:px-40 md:justify-between
+            md:gap-10 md:px-10
+            lg:flex-row lg:px-20 lg:justify-between
+            xl:px-40
         ">
             <div className='flex flex-col gap-10 mt-12'>
                 <h3 className='font-bold text-xl'>
