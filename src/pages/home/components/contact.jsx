@@ -49,8 +49,14 @@ const contact = () => {
                     <label htmlFor='email' className='text-bold text-white text-lg'>Message <span className='text-red-500'>*</span></label>
                     <textarea type="email" id='email' rows="8" className='bg-darkWhite outline-none border-none rounded-sm p-1 text-primaryDark' placeholder='Your message' required/>
                 </div>
-                <div className="form-section flex flex-col gap-3">
-                    <button className='bg-accent py-2 px-4 rounded-md text-white font-bold'>SEND</button>
+                <div className="
+                    form-section flex gap-3 justify-end
+                ">
+                    <button className='
+                        bg-accent py-2 px-4 rounded-md text-white font-bold
+                    '>
+                        SEND
+                    </button>
                 </div>
             </form>
             <div className="
