@@ -19,7 +19,9 @@ const about = () => {
             lg:flex-row lg:px-20 lg:justify-between
             xl:px-40
         ">
-            <div className='flex flex-col gap-10 mt-12'>
+            <div className='
+            flex flex-col gap-10 mt-12
+            '>
                 <h3 className='font-bold text-xl'>
                     Who is <br />
                     <span className='text-primaryDark dark:text-white'>Kasitphoom Thowongs?</span>
@@ -31,7 +33,8 @@ const about = () => {
                 </div>
 
                 <p className=''>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates porro, provident illum aspernatur consectetur laudantium quidem dolor odio similique error officiis sunt sapiente praesentium assumenda voluptate aut harum eaque tenetur veritatis? Libero tempore labore suscipit deleniti asperiores eum id ex necessitatibus itaque odio quasi, dicta aspernatur inventore in veritatis! Inventore.
+
+                    I am a motivated and hardworking Software Engineer student with a passion for solving complex problems, with fast learning and good teamwork skills. I'm a bachelor's student studying <span className='text-line dark:text-white font-bold'>software engineering at King Monkut's Institute of Technology LadKrabang</span>  <br />I am looking forward to putting my academic understanding to use in a real-world situation. Having a solid foundation in programming languages such as <span className='text-line dark:text-white font-bold'>HTML, CSS, JavaScript, React.js, Tailwind CSS, SQL, Python, C, C++, etc.</span> I'm determined to contribute my abilities and acquire knowledge from experienced professionals in a vibrant internship environment. My objective is to use this internship to advance my technical knowledge, improve my collaborative skills outside of university settings, and have a significant impact on the software engineering industry.
                 </p>
             </div>
             <div className='flex flex-col gap-10'>
