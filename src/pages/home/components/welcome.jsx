@@ -6,6 +6,9 @@ import React from 'react'
 // fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+// files
+import resume from '../../../assets/Kasitphoom - Resume.pdf'
+
 const Welcome = () => {
   return (
     <section className='relative'>
@@ -18,7 +21,7 @@ const Welcome = () => {
                 <p className='text-white w-full text-center'>
                     Software Engineer student with fast learning and good teamwork skills.  Having a solid foundation in Web development (Full-stack)
                 </p>
-                    <a href="" className='bg-accent py-4 px-8 rounded-md'>DOWNLOAD CV</a>
+                    <a href={resume} className='bg-accent py-4 px-8 rounded-md' download={"Kasitphoom-Resume"}>DOWNLOAD CV</a>
             </div>
             <div className='flex justify-center'>
                 <div className="bg-white w-auto flex items-center gap-5 px-4 py-3 text-2xl rounded-t-md text-line">

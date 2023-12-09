@@ -1836,6 +1836,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"emailjs-com@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "emailjs-com@npm:3.2.0"
+  checksum: 3c6865ce89ebabeccd4f678fbd5f545f58482bb99fc23c17d9cebbf895705275df2da9c6fadaef8148397fe7fcc18cbbe49f9c720b5ad88b2dd6b82680ef169f
+  languageName: node
+  linkType: hard
+
 "emoji-regex@npm:^8.0.0":
   version: 8.0.0
   resolution: "emoji-regex@npm:8.0.0"
@@ -3663,6 +3670,7 @@ __metadata:
     "@types/react-dom": "npm:^18.2.15"
     "@vitejs/plugin-react": "npm:^4.2.0"
     autoprefixer: "npm:^10.4.16"
+    emailjs-com: "npm:^3.2.0"
     eslint: "npm:^8.53.0"
     eslint-plugin-react: "npm:^7.33.2"
     eslint-plugin-react-hooks: "npm:^4.6.0"
