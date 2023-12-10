@@ -28,6 +28,30 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
   document.documentElement.classList.remove('dark')
 }
 
+const theme = async () => {
+  const API_TOKEN = "gya3oy5YiL-vFTKNNygjZ39dn0aIWv5oo0oLxPM3"
+  const ACCOUNT_ID = "bdc9249808c282142a516e6a8af31b69"
+  const DATABASE_ID = "f0f5d5b5-c5b9-4eb8-b3f9-76bdc9882e33"
+
+  const requestOptions = {
+    method: 'POST',
+    headers: { 
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${API_TOKEN}`
+    },
+    body: JSON.stringify({
+      "query": "SELECT * FROM projects",
+      "params": []
+    })
+  }
+
+  fetch(`https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/d1/database/${DATABASE_ID}/query`, requestOptions)
+  .then(res => console.log(res.json()))
+  .catch(err => console.error(err))
+} 
+
+theme()
+
 const router = createBrowserRouter([
   {
     path: "/",

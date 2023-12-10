@@ -4,6 +4,8 @@ import React from 'react'
 import project1 from '../images/ipyothin.png'
 import project2 from '../images/Screenshot 2023-12-08-142000.png'
 import project3 from '../images/personal-portfolio.png'
+import project4 from '../images/soccer-robot.png'
+import project5 from '../images/vibin.png'
 
 // fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -189,6 +191,96 @@ const projects = () => {
                         <a href="/" rel="noreferrer" target='_blank' className='w-fit px-4 py-2 bg-line rounded-md text-white hover:bg-white hover:text-line transition-all duration-300'>
                             <FontAwesomeIcon icon="fa-solid fa-globe"/> &nbsp;
                             View Website
+                        </a>
+                    </div>
+                    <hr />
+                </div>
+                
+            </div>
+            <div className="
+                flex flex-col gap-10 items-center
+                md:p-10
+                lg:flex-row lg:px-40 lg:justify-between
+            ">
+                <div className="
+                    bg-primaryDark dark:bg-white rounded-md p-2 h-fit
+                    lg:max-w-[50%] 
+                ">
+                    <img src={project4} alt="" className='rounded-md h-auto w-full object-cover'/>
+                </div>
+                <div className="project-info flex flex-col gap-8 lg:max-w-[50%]">
+                    <div className="project-name flex gap-2 justify-between text-line dark:text-white">
+                        <h3 className='font-bold text-lg text-line dark:text-white'>Soccer Robot Omniwheels Simulation</h3>
+                        <FontAwesomeIcon icon="fa-solid fa-caret-down" className='text-white dark:text-primaryDark bg-primaryDark dark:bg-white p-2  flex justify-center items-center rounded-lg lg:hidden' onClick={ToggleProjectHandle}/>
+                    </div>
+                    <div className='project-desc flex flex-col gap-8 overflow-hidden animate-none transition-all duration-300 max-h-0 lg:max-h-[9999px]'>
+                        <div className='flex flex-row flex-wrap gap-3 text-white'>
+                            <div className="rounded-lg bg-lightBgDark px-4 py-1 hover:bg-line transition-all duration-300">
+                                Python
+                            </div>
+                            <div className="rounded-lg bg-lightBgDark px-4 py-1 hover:bg-line transition-all duration-300">
+                                Tkinter
+                            </div>
+                            <div className="rounded-lg bg-lightBgDark px-4 py-1 hover:bg-line transition-all duration-300">
+                                GIT
+                            </div>
+                        </div>
+                        <div className="description">
+                            <p className='text-textLight dark:text-textDark'>
+                                Develop a simulation of soccer robot omniwheels using <span className='font-bold text-line  dark:text-white'>Python and Tkinter</span> to simulate the movement of the robot. This project contains physic calculations and graphic design. Nice user-friendly interface with customs variables for user to change, such as robot PID setting, field friction, and simulation setup.
+                            </p>
+                        </div>
+                        <a href="https://github.com/Kasitphoom/COMPUTER_PROGRAMMING/blob/master/HOMEWORK/FInal%20Proj/final.py" rel="noreferrer" target='_blank' className='w-fit px-4 py-2 bg-line rounded-md text-white hover:bg-white hover:text-line transition-all duration-300'>
+                            <FontAwesomeIcon icon="fa-brands fa-github"/> &nbsp;
+                            View Source Code
+                        </a>
+                    </div>
+                    <hr />
+                </div>
+                
+            </div>
+            <div className="
+                flex flex-col gap-10 items-center
+                md:p-10
+                lg:flex-row lg:px-40 lg:justify-between
+            ">
+                <div className="
+                    bg-primaryDark dark:bg-white rounded-md p-2 h-fit
+                    lg:max-w-[50%] 
+                ">
+                    <img src={project5} alt="" className='rounded-md h-auto w-full object-cover'/>
+                </div>
+                <div className="project-info flex flex-col gap-8 lg:max-w-[50%]">
+                    <div className="project-name flex gap-2 justify-between text-line dark:text-white">
+                        <h3 className='font-bold text-lg text-line dark:text-white'>Vibin Music Player</h3>
+                        <FontAwesomeIcon icon="fa-solid fa-caret-down" className='text-white dark:text-primaryDark bg-primaryDark dark:bg-white p-2  flex justify-center items-center rounded-lg lg:hidden' onClick={ToggleProjectHandle}/>
+                    </div>
+                    <div className='project-desc flex flex-col gap-8 overflow-hidden animate-none transition-all duration-300 max-h-0 lg:max-h-[9999px]'>
+                        <div className='flex flex-row flex-wrap gap-3 text-white'>
+                            <div className="rounded-lg bg-lightBgDark px-4 py-1 hover:bg-line transition-all duration-300">
+                                C++
+                            </div>
+                            <div className="rounded-lg bg-lightBgDark px-4 py-1 hover:bg-line transition-all duration-300">
+                                Object-Oriented Programming
+                            </div>
+                            <div className="rounded-lg bg-lightBgDark px-4 py-1 hover:bg-line transition-all duration-300">
+                                Qt6
+                            </div>
+                            <div className="rounded-lg bg-lightBgDark px-4 py-1 hover:bg-line transition-all duration-300">
+                                GIT
+                            </div>
+                        </div>
+                        <div className="description flex flex-col gap-3">
+                            <p className='text-textLight dark:text-textDark'>
+                                Using Object-Oriented Programming language <span className='font-bold text-line  dark:text-white'>C++</span> to create a music player application that can play music from your local computer. It is able to upload files into file mode and play music from the file. It also has a playlist mode or folder mode which user can select a folder to play music from.
+                            </p>
+                            <p className='text-textLight dark:text-textDark'>
+                                User has many options to interact with the application, such as <span className='font-bold text-line  dark:text-white'>play, pause, next, previous, shuffle, repeat, and volume control</span>. The application also has a nice user-friendly interface with a custom music player design. User may choose their setting preference, such as <span className='font-bold text-line  dark:text-white'>theme color, language, and output device.</span>
+                            </p>
+                        </div>
+                        <a href="https://github.com/Kasitphoom/Audio_EQ" rel="noreferrer" target='_blank' className='w-fit px-4 py-2 bg-line rounded-md text-white hover:bg-white hover:text-line transition-all duration-300'>
+                            <FontAwesomeIcon icon="fa-brands fa-github"/> &nbsp;
+                            View Source Code
                         </a>
                     </div>
                     <hr />
