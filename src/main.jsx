@@ -15,6 +15,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 
+import { onRequest } from './index.js'
+
 library.add(fab, fas)
 
 // if localStorage has empty theme
@@ -48,9 +50,9 @@ const theme = async () => {
   fetch(`https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/d1/database/${DATABASE_ID}/query`, requestOptions)
   .then(res => console.log(res.json()))
   .catch(err => console.error(err))
-} 
+}
 
-theme()
+onRequest()
 
 const router = createBrowserRouter([
   {
