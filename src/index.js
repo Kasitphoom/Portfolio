@@ -1,7 +1,6 @@
-export async function onRequest(context) {
+export async function RequestPortfolioData(context) {
     // Create a prepared statement with our query
-    const ps = context.env.PROJECT_DB.prepare('SELECT * from users');
-    const data = await ps.first();
-  
-    return Response.json(data);
+    const res = await Axios.get('https://p-database.kasitphoom.com/projects')
+    setProjects(res.data)
+    console.log(projects)
 }

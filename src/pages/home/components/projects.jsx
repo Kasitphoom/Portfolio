@@ -1,4 +1,6 @@
 import React from 'react'
+import Axios from 'axios'
+import { useState, useEffect } from 'react'
 
 // images
 import project1 from '../images/ipyothin.png'
@@ -11,6 +13,18 @@ import project5 from '../images/vibin.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const projects = () => {
+    const [projects, setProjects] = useState([])
+    useEffect(() => {
+        Axios.get('https://p-database.kasitphoom.com/projects')
+        .then(res => {
+            setProjects(res.data)
+            console.log(projects)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }, [])
+    
     const ToggleProjectHandle = (e) => {
         if (e.target.tagName === 'svg') {
             const parentElem = e.target.parentElement.parentElement
@@ -27,6 +41,7 @@ const projects = () => {
             }
         }
     }
+    // getProjects()
   return (
     <section className='p-5' id='project'>
         <h1 className='
