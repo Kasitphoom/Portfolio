@@ -5,10 +5,11 @@ import { ThemeProvider } from '@emotion/react'
 // components
 import App from './App.jsx'
 import './index.css'
+import Admin from './pages/admin/admin.jsx'
+import SearchPage from './pages/search/index.jsx';
 
 // react router dom
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import SearchPage from './pages/search/index.jsx';
 
 // fontawesome
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
     path: "/search",
     element: <SearchPage />,
   },
+  {
+    path: "/admin",
+    element: <Admin />,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

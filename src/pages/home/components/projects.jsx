@@ -17,13 +17,15 @@ const projects = () => {
     useEffect(() => {
         Axios.get('https://p-database.kasitphoom.com/projects')
         .then(res => {
-            setProjects(res.data)
-            console.log(projects)
+            setProjects(res.data.results)
         })
         .catch(err => {
             console.log(err)
         })
     }, [])
+    useEffect(() => {
+        console.log(projects)
+    }, [projects])
     
     const ToggleProjectHandle = (e) => {
         if (e.target.tagName === 'svg') {
@@ -52,6 +54,103 @@ const projects = () => {
         </h1>
         <div className="w-24 h-2 bg-line mx-auto rounded-full"></div>
         <div className="flex flex-col mt-16 gap-24">
+        {
+            projects.map((project, index) => {
+                return (
+                    <div className="
+                        flex flex-col gap-10 items-center
+                        md:p-10
+                        lg:flex-row lg:px-40 lg:justify-between
+                    " key={index}>
+                        <div className="
+                            bg-primaryDark dark:bg-white rounded-md p-2 h-fit
+                            lg:max-w-[50%] 
+                        ">
+                            <img src={project.image} alt="" className='rounded-md h-auto w-full object-cover'/>
+                        </div>
+                        <div className="project-info flex flex-col gap-8 lg:max-w-[50%]">
+                            <div className="project-name flex items-center justify-between gap-2" >
+                                <h3 className='font-bold text-lg text-line dark:text-white'>{project.name}</h3>
+                                <FontAwesomeIcon icon="fa-solid fa-caret-down" className='text-white dark:text-primaryDark bg-primaryDark dark:bg-white p-2  flex justify-center items-center rounded-lg lg:hidden' onClick={ToggleProjectHandle}/>
+                            </div>
+                            <div className='project-desc flex flex-col gap-8 overflow-hidden animate-none transition-all duration-300 max-h-0 lg:max-h-[9999px]'>
+                                <div className='flex flex-row flex-wrap gap-3 text-white'>
+                                    {
+                                        project.tags.split(',').map((tag, index) => {
+                                            return (
+                                                <div className="rounded-lg bg-lightBgDark px-4 py-1 hover:bg-line transition-all duration-300" key={index}>
+                                                    {tag}
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
+                                <div className="description">
+                                    <p className='text-textLight dark:text-textDark'>
+                                        {project.description}
+                                    </p>
+                                </div>
+                                <a href={project.link} rel="noreferrer" target='_blank' className='w-fit px-4 py-2 bg-line rounded-md text-white hover:bg-white hover:text-line transition-all duration-300'>
+                                    <FontAwesomeIcon icon="fa-solid fa-globe"/> &nbsp;
+                                    View Website
+                                </a>
+                            </div>
+                            <hr />
+                        </div>
+                        
+                    </div>
+                )
+            })
+                
+        }
+        <div className="
+                flex flex-col gap-6 items-center
+                md:p-10
+                lg:flex-row lg:px-40 lg:justify-between
+            ">
+                <div className="
+                    bg-primaryDark dark:bg-white rounded-md p-2 h-fit
+                    lg:max-w-[50%] 
+                ">
+                    <img src={project1} alt="" className='rounded-md h-auto w-full object-cover'/>
+                </div>
+                <div className="project-info flex flex-col gap-8 lg:max-w-[50%]">
+                    <div className="project-name flex items-center justify-between gap-2" >
+                        <h3 className='font-bold text-lg text-line dark:text-white'>Yothinburana School International Programme Website</h3>
+                        <FontAwesomeIcon icon="fa-solid fa-caret-down" className='text-white dark:text-primaryDark bg-primaryDark dark:bg-white p-2  flex justify-center items-center rounded-lg lg:hidden' onClick={ToggleProjectHandle}/>
+                    </div>
+                    <div className='project-desc flex flex-col gap-8 overflow-hidden animate-none transition-all duration-300 max-h-0 lg:max-h-[9999px]'>
+                        <div className='flex flex-row flex-wrap gap-3 text-white'>
+                            <div className="rounded-lg bg-lightBgDark px-4 py-1 hover:bg-line transition-all duration-300">
+                                HTML
+                            </div>
+                            <div className="rounded-lg bg-lightBgDark px-4 py-1 hover:bg-line transition-all duration-300">
+                                JavaScript
+                            </div>
+                            <div className="rounded-lg bg-lightBgDark px-4 py-1 hover:bg-line transition-all duration-300">
+                                CSS
+                            </div>
+                            <div className="rounded-lg bg-lightBgDark px-4 py-1 hover:bg-line transition-all duration-300">
+                                PHP
+                            </div>
+                            <div className="rounded-lg bg-lightBgDark px-4 py-1 hover:bg-line transition-all duration-300">
+                                MySQL
+                            </div>
+                        </div>
+                        <div className="description">
+                            <p className='text-textLight dark:text-textDark'>
+                                Develop an user-friendly interface and responsive website for Yothinburana School International Programme that provides information about the school and the programme. Managing file and database Using <span className='font-bold text-line  dark:text-white'>PHP and MySQL</span> to create a backend server and using <span className='font-bold text-line  dark:text-white'>HTML, CSS, JavaScript</span> to create a frontend website. 
+                            </p>
+                        </div>
+                        <a href="https://www.ipyothin.com/" rel="noreferrer" target='_blank' className='w-fit px-4 py-2 bg-line rounded-md text-white hover:bg-white hover:text-line transition-all duration-300'>
+                            <FontAwesomeIcon icon="fa-solid fa-globe"/> &nbsp;
+                            View Website
+                        </a>
+                    </div>
+                    <hr />
+                </div>
+                
+            </div>
             <div className="
                 flex flex-col gap-6 items-center
                 md:p-10
