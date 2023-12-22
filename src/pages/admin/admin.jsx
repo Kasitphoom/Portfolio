@@ -1,5 +1,6 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import Axios from 'axios'
 
 // components
 import Nav from '../../components/Nav'
@@ -24,6 +25,32 @@ const Admin = () => {
             }
         }
     }
+
+    const [projects, setProjects] = useState([])
+    useEffect(() => {
+        Axios.get('https://p-database.kasitphoom.com/projects')
+        .then(res => {
+            setProjects(res.data.results)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }, [])
+
+    useEffect(() => {
+        console.log(projects)
+    }, [projects])
+
+    const [projectSelected, setProjectSelected] = useState(projects[0])
+    const handleProjectSelected = (e) => {
+        
+        const project = projects.find(project => project.name === e.target.value)
+        setProjectSelected(project)
+    }
+
+    useEffect(() => {
+        console.log(projectSelected)
+    }, [projectSelected])
     
     return (
         <>
@@ -44,7 +71,8 @@ const Admin = () => {
                         </div>
                         
                         <hr />
-                        <form className="flex flex-col gap-2 text-darkWhite text-base max-h-0 overflow-hidden transition-all duration-300" id='addForm' method='post' action='https://p-database.kasitphoom.com/add/projects' encType="multipart/form-data">
+                        
+                        <form className="flex flex-col gap-2 text-primaryDark dark:text-darkWhite text-base max-h-0 overflow-hidden transition-all duration-300" id='addForm' method='post' action='https://p-database.kasitphoom.com/add/projects' encType="multipart/form-data" target=''>
                             <label htmlFor="name">TITLE</label>
                             <input type="text" name="name" id="name" className="rounded-sm bg-darkWhite text-primaryDark p-2"/>
                             <label htmlFor="tags">TAGS (Comma Separated)</label>
@@ -60,6 +88,47 @@ const Admin = () => {
                                 <input type="radio" name="linkType" value="github" />
                                 <label htmlFor="github">GitHub</label>
                                 <input type="radio" name="linkType" value="website"/>
+                                <label htmlFor="website">Website</label>
+                            </div>
+                            <button className='bg-line text-white px-4 py-2 rounded-md'>ADD</button>
+                        </form>
+                    </div>
+                    <div className="addsection flex flex-col gap-2">
+                        <div className='flex justify-between items-center'>
+                            <h3 className='text-xl font-bold text-line dark:text-white'>EDIT</h3>
+                            <button className='bg-line text-white px-4 py-2 rounded-md' onClick={toggleHide('editForm')}>
+                                <FontAwesomeIcon icon={['fas', 'caret-down']} />
+                            </button>
+                        </div>
+                        
+                        <hr />
+                        
+                        <form className="flex flex-col gap-2 text-primaryDark dark:text-darkWhite text-base max-h-0 overflow-hidden transition-all duration-300" id='editForm' method='post' action='https://p-database.kasitphoom.com/add/projects' encType="multipart/form-data" target=''>
+                            <select name="select" id="select" className='text-white p-2 bg-line rounded-md' onChange={handleProjectSelected}>
+                                <option value="" selected disabled>Choose project</option>
+                                {
+                                    projects.map((project, index) => {
+                                        return (
+                                            <option key={project.id} value={project.id}>{project.name}</option>
+                                        )
+                                    })
+                                }
+                            </select>
+                            <label htmlFor="name">TITLE</label>
+                            <input type="text" name="name" id="name" className="rounded-sm bg-darkWhite text-primaryDark p-2" value={projectSelected ? projectSelected['name'] : ""}/>
+                            <label htmlFor="tags">TAGS (Comma Separated)</label>
+                            <input type="text" name="tags" id="tags" className="rounded-sm bg-darkWhite text-primaryDark p-2" value={projectSelected ? projectSelected['tags'] : ""}/>
+                            <label htmlFor="description">DESCRIPTION</label>
+                            <textarea name="description" id="description" className="rounded-sm bg-darkWhite text-primaryDark p-2" value={projectSelected ? projectSelected['description'] : ""}></textarea>
+                            <label htmlFor="image">Image</label>
+                            <input type="file" name="image" id="image" className="rounded-sm bg-darkWhite text-primaryDark p-2" onChange={handleImageChange}/>
+                            <img src={img == '' ?  projectSelected ? projectSelected['image'] : img : img} alt="" />
+                            <label htmlFor="link">LINK</label>
+                            <input type="text" name="link" id="link" className="rounded-sm bg-darkWhite text-primaryDark p-2" value={projectSelected ? projectSelected['link'] : ""}/>
+                            <div className='flex flex-row gap-2'>
+                                <input type="radio" name="linkType" value="github" checked={projectSelected ? projectSelected['linktype'] == 'github' : false}/>
+                                <label htmlFor="github">GitHub</label>
+                                <input type="radio" name="linkType" value="website" checked={projectSelected ? projectSelected['linktype'] == 'website' : false}/>
                                 <label htmlFor="website">Website</label>
                             </div>
                             <button className='bg-line text-white px-4 py-2 rounded-md'>ADD</button>
