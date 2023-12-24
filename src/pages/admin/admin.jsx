@@ -68,18 +68,18 @@ const Admin = () => {
     }
 
     const handleEdit = (e, id) => {
-        return () => {
-            const form = document.getElementById('editForm')
-            const formData = new FormData(form)
-            formData.append('id', id)
-            Axios.post('https://p-database.kasitphoom.com/edit/projects', formData)
-            .then(res => {
-                console.log(res)
-            })
-            .catch(err => {
-                console.log(err)
-            })
-        }
+        e.preventDefault()
+        const form = document.getElementById('editForm')
+        const formData = new FormData(form)
+        console.log(...formData)
+        Axios.post(`https://p-database.kasitphoom.com/edit/project/${id}`, formData)
+        .then(res => {
+            console.log(res)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+        
     }
 
     const handleAddProject = (e) => {
@@ -88,6 +88,21 @@ const Admin = () => {
         const form = document.getElementById('addForm')
         const formData = new FormData(form)
         Axios.post('https://p-database.kasitphoom.com/add/projects', formData)
+        .then(res => {
+            console.log(res)
+            window.location.reload()
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+
+    const handleChangeImage = (e) => {
+        e.preventDefault()
+        alert('Image changed')
+        const form = document.getElementById('editForm')
+        const formData = new FormData(form)
+        Axios.post('https://p-database.kasitphoom.com/edit/project/image/', formData)
         .then(res => {
             console.log(res)
             window.location.reload()
@@ -141,53 +156,59 @@ const Admin = () => {
                     <div className="addsection flex flex-col gap-2">
                         <div className='flex justify-between items-center'>
                             <h3 className='text-xl font-bold text-line dark:text-white'>EDIT</h3>
-                            <button className='bg-line text-white px-4 py-2 rounded-md' onClick={toggleHide('editForm')}>
+                            <button className='bg-line text-white px-4 py-2 rounded-md' onClick={toggleHide('editFormWrapper')}>
                                 <FontAwesomeIcon icon={['fas', 'caret-down']} />
                             </button>
                         </div>
                         
                         <hr />
-                        
-                        <form className="flex flex-col gap-2 text-primaryDark dark:text-darkWhite text-base max-h-0 overflow-hidden transition-all duration-300" id='editForm' encType="multipart/form-data" target=''>
-                            <select name="select" id="select" className='text-white p-2 bg-line rounded-md' onChange={handleProjectSelected}>
-                                <option value="" selected disabled>Choose project</option>
-                                {
-                                    projects.map((project) => {
-                                        return (
-                                            <option value={project.ID}>{project.name}</option>
-                                        )
-                                    })
-                                }
-                            </select>
-                            <label htmlFor="name">TITLE</label>
-                            <input type="text" name="name" id="name" className="rounded-sm bg-darkWhite text-primaryDark p-2" value={projectSelected ? projectSelected['name'] : ""}/>
+                        <div className='max-h-0 overflow-hidden transition-all duration-300 flex flex-col gap-4' id="editFormWrapper">
+                            <form className="flex flex-col gap-2 text-primaryDark dark:text-darkWhite text-base" id='editForm'>
+                                <select name="select" id="select" className='text-white p-2 bg-line rounded-md' onChange={handleProjectSelected}>
+                                    <option value="" selected disabled>Choose project</option>
+                                    {
+                                        projects.map((project) => {
+                                            return (
+                                                <option value={project.ID}>{project.name}</option>
+                                            )
+                                        })
+                                    }
+                                </select>
+                                <label htmlFor="name">TITLE</label>
+                                <input type="text" name="name" id="name" className="rounded-sm bg-darkWhite text-primaryDark p-2" defaultValue={projectSelected ? projectSelected['name'] : ""}/>
 
-                            <label htmlFor="tags">TAGS (Comma Separated)</label>
-                            <input type="text" name="tags" id="tags" className="rounded-sm bg-darkWhite text-primaryDark p-2" value={projectSelected ? projectSelected['tags'] : ""}/>
+                                <label htmlFor="tags">TAGS (Comma Separated)</label>
+                                <input type="text" name="tags" id="tags" className="rounded-sm bg-darkWhite text-primaryDark p-2" defaultValue={projectSelected ? projectSelected['tags'] : ""}/>
 
-                            <label htmlFor="description">DESCRIPTION</label>
-                            <textarea name="description" id="description" className="rounded-sm bg-darkWhite text-primaryDark p-2" value={projectSelected ? projectSelected['description'] : ""}></textarea>
+                                <label htmlFor="description">DESCRIPTION</label>
+                                <textarea name="description" id="description" className="rounded-sm bg-darkWhite text-primaryDark p-2" defaultValue={projectSelected ? projectSelected['description'] : ""}></textarea>
 
-                            <label htmlFor="image">Image</label>
-                            <input type="file" name="image" id="image" className="rounded-sm bg-darkWhite text-primaryDark p-2" onChange={handleImageChange}/>
-                            <img src={img == '' ?  projectSelected ? projectSelected['image'] : img : img} alt="" />
+                                <label htmlFor="image">Image</label>
+                                <img src={projectSelected ? projectSelected['image'] : ""} alt="" />
 
-                            <label htmlFor="link">LINK</label>
-                            <input type="text" name="link" id="link" className="rounded-sm bg-darkWhite text-primaryDark p-2" value={projectSelected ? projectSelected['link'] : ""}/>
+                                <label htmlFor="link">LINK</label>
+                                <input type="text" name="link" id="link" className="rounded-sm bg-darkWhite text-primaryDark p-2" defaultValue={projectSelected ? projectSelected['link'] : ""}/>
 
-                            <div className='flex flex-row gap-2'>
-                                <input type="radio" name="linkType" value="github" checked={projectSelected ? projectSelected['linktype'] == 'github' : false}/>
-                                <label htmlFor="github">GitHub</label>
-                                <input type="radio" name="linkType" value="website" checked={projectSelected ? projectSelected['linktype'] == 'website' : false}/>
-                                <label htmlFor="website">Website</label>
-                            </div>
-                            <button className='bg-line text-white px-4 py-2 rounded-md' onClick={
-                                e => {handleEdit(e, projectSelected ? projectSelected['ID'] : "")}
-                            }>EDIT</button>
-                            <button className='bg-red-500 text-white px-4 py-2 rounded-md' onClick={
-                                e => {handleDelete(e, projectSelected ? projectSelected['ID'] : "")}
-                            }>DELETE</button>
-                        </form>
+                                <div className='flex flex-row gap-2'>
+                                    <input type="radio" name="linkType" value="github" checked={projectSelected ? projectSelected['linktype'] == 'github' : false}/>
+                                    <label htmlFor="github">GitHub</label>
+                                    <input type="radio" name="linkType" value="website" checked={projectSelected ? projectSelected['linktype'] == 'website' : false}/>
+                                    <label htmlFor="website">Website</label>
+                                </div>
+                                <button className='bg-line text-white px-4 py-2 rounded-md' onClick={
+                                    e => {handleEdit(e, projectSelected ? projectSelected['ID'] : "")}
+                                }>EDIT CONTENT</button>
+                                <button className='bg-red-500 text-white px-4 py-2 rounded-md' onClick={
+                                    e => {handleDelete(e, projectSelected ? projectSelected['ID'] : "")}
+                                }>DELETE</button>
+                            </form>
+                            <form className='flex flex-col gap-4 text-primaryDark dark:text-darkWhite' encType='multipart/form-data'>
+                                <label htmlFor="image">Change Image</label>
+                                <input type="file" name="image" id="image" className="rounded-sm bg-darkWhite text-primaryDark p-2" onChange={handleImageChange}/>
+                                <img src={img} alt="" />
+                                <button className='bg-line text-white px-4 py-2 rounded-md' onClick={handleChangeImage}>CHANGE IMAGE</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 
