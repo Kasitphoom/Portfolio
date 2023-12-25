@@ -31,7 +31,7 @@ const Nav = () => {
 
   return (
     <nav className='flex justify-between items-center flex-row bg-darkWhite dark:bg-lightBgDark p-4 h-24 dark:text-white text-primaryDark fixed w-full z-10'>
-        <div className="nav-title flex gap-4 flex-row items-center">
+        <div className="nav-title flex gap-4 flex-row items-center cursor-pointer" onClick={() => {window.location.href = "/"}}>
             <div className="
                 profile w-12 h-12 rounded-full bg-line
             ">
