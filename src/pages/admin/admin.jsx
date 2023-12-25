@@ -75,6 +75,7 @@ const Admin = () => {
         Axios.post(`https://p-database.kasitphoom.com/edit/project/${id}`, formData)
         .then(res => {
             console.log(res)
+            window.location.reload()
         })
         .catch(err => {
             console.log(err)
@@ -97,15 +98,14 @@ const Admin = () => {
         })
     }
 
-    const handleChangeImage = (e) => {
+    const handleChangeImage = (e, id) => {
         e.preventDefault()
-        alert('Image changed')
-        const form = document.getElementById('editForm')
+        const form = document.getElementById('editImage')
         const formData = new FormData(form)
-        Axios.post('https://p-database.kasitphoom.com/edit/project/image/', formData)
+        Axios.post(`https://p-database.kasitphoom.com/edit/project/image/${id}`, formData)
         .then(res => {
             console.log(res)
-            window.location.reload()
+            
         })
         .catch(err => {
             console.log(err)
@@ -116,7 +116,10 @@ const Admin = () => {
         <>
             <Nav />
             <div className='spacer h-24'></div>
-            <section className='p-4 flex flex-col gap-5'>
+            <section className='
+            p-4 flex flex-col gap-5
+            lg:px-40 lg:py-10
+            '>
                 <h1 className='text-4xl font-bold text-line dark:text-white'>Admin Page</h1>
                 <div className='flex flex-col gap-3'>
                     <h2 className='text-2xl font-bold text-line dark:text-white'>
@@ -163,7 +166,7 @@ const Admin = () => {
                         
                         <hr />
                         <div className='max-h-0 overflow-hidden transition-all duration-300 flex flex-col gap-4' id="editFormWrapper">
-                            <form className="flex flex-col gap-2 text-primaryDark dark:text-darkWhite text-base" id='editForm'>
+                            <form className="flex flex-col gap-2 text-primaryDark dark:text-darkWhite text-base" id='editForm' encType='application/x-www-form-urlencoded' method='post'>
                                 <select name="select" id="select" className='text-white p-2 bg-line rounded-md' onChange={handleProjectSelected}>
                                     <option value="" selected disabled>Choose project</option>
                                     {
@@ -195,18 +198,25 @@ const Admin = () => {
                                     <input type="radio" name="linkType" value="website" checked={projectSelected ? projectSelected['linktype'] == 'website' : false}/>
                                     <label htmlFor="website">Website</label>
                                 </div>
-                                <button className='bg-line text-white px-4 py-2 rounded-md' onClick={
-                                    e => {handleEdit(e, projectSelected ? projectSelected['ID'] : "")}
-                                }>EDIT CONTENT</button>
-                                <button className='bg-red-500 text-white px-4 py-2 rounded-md' onClick={
-                                    e => {handleDelete(e, projectSelected ? projectSelected['ID'] : "")}
-                                }>DELETE</button>
+                                <div className="flex flex-row lg:justify-end">
+                                    <button className='bg-line text-white px-4 py-2 rounded-md lg:w-fit' onClick={
+                                        e => {handleEdit(e, projectSelected ? projectSelected['ID'] : "")}
+                                    }>EDIT CONTENT</button>
+                                </div>
+                                
+                                
                             </form>
-                            <form className='flex flex-col gap-4 text-primaryDark dark:text-darkWhite' encType='multipart/form-data'>
+                            <form className='flex flex-col gap-4 text-primaryDark dark:text-darkWhite' encType='multipart/form-data' id="editImage">
                                 <label htmlFor="image">Change Image</label>
                                 <input type="file" name="image" id="image" className="rounded-sm bg-darkWhite text-primaryDark p-2" onChange={handleImageChange}/>
                                 <img src={img} alt="" />
-                                <button className='bg-line text-white px-4 py-2 rounded-md' onClick={handleChangeImage}>CHANGE IMAGE</button>
+                                <div className="flex flex-col gap-4 justify-start lg:flex-row-reverse">
+                                    <button className='bg-line text-white px-4 py-2 rounded-md' onClick={e => {handleChangeImage(e, projectSelected ? projectSelected['ID'] : "")}}>CHANGE IMAGE</button>
+                                    <button className='bg-red-500 text-white px-4 py-2 rounded-md' onClick={
+                                        e => {handleDelete(e, projectSelected ? projectSelected['ID'] : "")}
+                                    }>DELETE</button>
+                                </div>
+                                
                             </form>
                         </div>
                     </div>
