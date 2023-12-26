@@ -30,7 +30,10 @@ const Nav = () => {
     }
 
   return (
-    <nav className='flex justify-between items-center flex-row bg-darkWhite dark:bg-lightBgDark p-4 h-24 dark:text-white text-primaryDark fixed w-full z-10'>
+    <nav className='
+    flex justify-between items-center flex-row bg-darkWhite dark:bg-lightBgDark p-4 h-20 dark:text-white text-primaryDark fixed w-full z-10
+    lg:h-24
+    '>
         <div className="nav-title flex gap-4 flex-row items-center cursor-pointer" onClick={() => {window.location.href = "/"}}>
             <div className="
                 profile w-12 h-12 rounded-full bg-line
@@ -80,7 +83,7 @@ const Nav = () => {
             <FontAwesomeIcon icon="fa-solid fa-bars"/>
         </div>
         <div className="
-            h-[calc(100vh-6rem)] bg-darkWhite dark:bg-lightBgDark w-screen absolute z-10 top-24 -left-full transition-all ease-in-out duration-300
+            h-[calc(100vh-6rem)] bg-darkWhite dark:bg-lightBgDark w-screen absolute z-10 top-20 -left-full transition-all ease-in-out duration-300
             md:hidden
         " id='responsive-menu'>
             <div className='
