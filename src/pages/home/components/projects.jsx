@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const projects = () => {
     const [projects, setProjects] = useState([])
-    const { secondsLeft, startCountdown } = useCountdown();
+    const [ secondsLeft, startCountdown ] = useCountdown();
     
     const fetchProject = () => {
         Axios.get('https://p-database.kasitphoom.com/projects')
