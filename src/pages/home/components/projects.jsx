@@ -80,7 +80,7 @@ const projects = () => {
                     <div className="
                         flex flex-col gap-10 items-center
                         md:p-10
-                        lg:flex-row lg:px-40 lg:justify-between
+                        lg:flex-row lg:justify-between
                     " key={index}>
                         <div className="
                             bg-primaryDark dark:bg-white rounded-md p-2 h-fit
