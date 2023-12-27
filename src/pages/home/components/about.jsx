@@ -53,44 +53,50 @@ const about = () => {
                     </h3>
 
                     <div className='flex flex-row flex-wrap gap-3 text-white'>
-                        <div className="rounded-full bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-line transition-all duration-300">
+                        <div className="rounded-full bg-line dark:bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-lightBgDark dark:hover:bg-line transition-all duration-300">
                             HTML
                         </div>
-                        <div className="rounded-full bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-line transition-all duration-300">
+                        <div className="rounded-full bg-line dark:bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-lightBgDark dark:hover:bg-line transition-all duration-300">
                             JavaScript
                         </div>
-                        <div className="rounded-full bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-line transition-all duration-300">
+                        <div className="rounded-full bg-line dark:bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-lightBgDark dark:hover:bg-line transition-all duration-300">
                             CSS
                         </div>
-                        <div className="rounded-full bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-line transition-all duration-300">
+                        <div className="rounded-full bg-line dark:bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-lightBgDark dark:hover:bg-line transition-all duration-300">
                             TailWind CSS
                         </div>
-                        <div className="rounded-full bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-line transition-all duration-300">
+                        <div className="rounded-full bg-line dark:bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-lightBgDark dark:hover:bg-line transition-all duration-300">
                             React.js
                         </div>
-                        <div className="rounded-full bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-line transition-all duration-300">
+                        <div className="rounded-full bg-line dark:bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-lightBgDark dark:hover:bg-line transition-all duration-300">
                             PHP
                         </div>
-                        <div className="rounded-full bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-line transition-all duration-300">
+                        <div className="rounded-full bg-line dark:bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-lightBgDark dark:hover:bg-line transition-all duration-300">
                             SQL
                         </div>
-                        <div className="rounded-full bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-line transition-all duration-300">
+                        <div className="rounded-full bg-line dark:bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-lightBgDark dark:hover:bg-line transition-all duration-300">
                             C
                         </div>
-                        <div className="rounded-full bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-line transition-all duration-300">
+                        <div className="rounded-full bg-line dark:bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-lightBgDark dark:hover:bg-line transition-all duration-300">
                             C++
                         </div>
-                        <div className="rounded-full bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-line transition-all duration-300">
+                        <div className="rounded-full bg-line dark:bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-lightBgDark dark:hover:bg-line transition-all duration-300">
                             Rust
                         </div>
-                        <div className="rounded-full bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-line transition-all duration-300">
+                        <div className="rounded-full bg-line dark:bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-lightBgDark dark:hover:bg-line transition-all duration-300">
                             Python
                         </div>
-                        <div className="rounded-full bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-line transition-all duration-300">
+                        <div className="rounded-full bg-line dark:bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-lightBgDark dark:hover:bg-line transition-all duration-300">
                             GIT
                         </div>
-                        <div className="rounded-full bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-line transition-all duration-300">
+                        <div className="rounded-full bg-line dark:bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-lightBgDark dark:hover:bg-line transition-all duration-300">
                             Arm Assembly
+                        </div>
+                        <div className="rounded-full bg-line dark:bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-lightBgDark dark:hover:bg-line transition-all duration-300">
+                            Node.js
+                        </div>
+                        <div className="rounded-full bg-line dark:bg-lightBgDark px-5 py-2 shadow-md shadow-shadow hover:bg-lightBgDark dark:hover:bg-line transition-all duration-300">
+                            AWS
                         </div>
                     </div>
                 </div>
