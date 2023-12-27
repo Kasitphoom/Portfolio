@@ -5,9 +5,9 @@ import Profile from '../../../images/20230603_115941.jpg'
 
 const about = () => {
     return (
-        <section className='mt-14 p-5' id='about'>
+        <section className='mt-24 p-5' id='about'>
             <h1 className='
-            text-primaryDark text-2xl text-center font-bold mb-3
+            text-primaryDark text-4xl text-center font-bold mb-3
             dark:text-white
             '>
                 ABOUT ME
