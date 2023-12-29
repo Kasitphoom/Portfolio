@@ -120,7 +120,7 @@ const projects = () => {
                                 </div>
                                 
                                 <a href={project.link} rel="noreferrer" target='_blank' className='
-                                w-fit px-4 py-2 bg-line rounded-md text-white hover:bg-white hover:text-line border-solid border-line border-2 transition-all duration-300
+                                w-fit px-4 py-2 bg-line rounded-md text-white hover:bg-white hover:text-line border-solid border-line border-2 transition-all duration-300 dark:hover:border-white
                                 '>
                                     {
                                         project.linktype == 'github' ? <FontAwesomeIcon icon="fa-brands fa-github"/> : <FontAwesomeIcon icon="fa-solid fa-globe"/>
