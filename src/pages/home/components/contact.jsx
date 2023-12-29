@@ -31,7 +31,7 @@ const contact = () => {
         ">
                 <form className="
                 flex flex-col p-4 gap-5 bg-lightBgDark rounded-t-md w-full
-                lg:rounded-l-md lg:rounded-t-none lg:px-14
+                lg:rounded-l-2xl lg:rounded-t-none lg:px-14
             " onSubmit={sentEmail}>
                     <div className="form-section flex flex-col gap-3">
                         <p className='text-bold text-white text-lg'>Name <span className='text-red-500'>*</span></p>
@@ -77,7 +77,7 @@ const contact = () => {
                 </form>
                 <div className="
                 flex flex-col justify-center items-center text-white text-lg bg-lightBgDark rounded-b-md p-14
-                lg:rounded-b-none lg:rounded-r-md
+                lg:rounded-b-none lg:rounded-r-2xl
             ">
                     <div className="flex flex-col gap-3">
                         <p className='flex gap-2 items-center'><FontAwesomeIcon icon="fa-brands fa-github" /><a href="http://github.com/Kasitphoom" target="_blank" rel="noopener noreferrer">Kasitphoom</a></p>

@@ -3,6 +3,10 @@ import Axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useCountdown } from '../../../useCountdown'
 
+// conponents
+import decoSVG from '../../../images/deco.svg'
+import lightDecoSVG from '../../../images/lightdeco.svg'
+
 // fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -58,7 +62,11 @@ const projects = () => {
             PROJECTS
         </h1>
         <div className="w-24 h-2 bg-line mx-auto rounded-full"></div>
-        <div className="flex flex-col mt-16 gap-24">
+        <div className="relative flex flex-col mt-16 gap-24">
+            <div className="absolute h-full -z-10 -right-5 flex items-center opacity-70">
+                <img src={decoSVG} alt="" className='hidden dark:block' />
+                <img src={lightDecoSVG} alt="" className='block dark:hidden' />
+            </div>
         {
             projects.length == 0 && setTimeout(() => {
                 reloadProject()
@@ -83,7 +91,7 @@ const projects = () => {
                         lg:flex-row lg:justify-between
                     " key={index}>
                         <div className="
-                            bg-primaryDark dark:bg-white rounded-md p-2 h-fit
+                            bg-primaryDark dark:bg-white rounded-[10px] p-1 h-fit
                             lg:max-w-[50%] 
                         ">
                             <img src={project.image} alt="" className='rounded-md h-auto w-full object-cover'/>
@@ -106,12 +114,14 @@ const projects = () => {
                                     }
                                 </div>
                                 <div className="description">
-                                    <p className='text-textLight dark:text-textDark'>
-                                        {project.description}
-                                    </p>
+<pre className='text-textLight whitespace-pre-wrap font-sora dark:text-textDark'>
+    {project.description}
+</pre>
                                 </div>
                                 
-                                <a href={project.link} rel="noreferrer" target='_blank' className='w-fit px-4 py-2 bg-line rounded-md text-white hover:bg-white hover:text-line transition-all duration-300'>
+                                <a href={project.link} rel="noreferrer" target='_blank' className='
+                                w-fit px-4 py-2 bg-line rounded-md text-white hover:bg-white hover:text-line border-solid border-line border-2 transition-all duration-300
+                                '>
                                     {
                                         project.linktype == 'github' ? <FontAwesomeIcon icon="fa-brands fa-github"/> : <FontAwesomeIcon icon="fa-solid fa-globe"/>
                                     }

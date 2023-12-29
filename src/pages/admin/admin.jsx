@@ -105,7 +105,7 @@ const Admin = () => {
         Axios.post(`https://p-database.kasitphoom.com/edit/project/image/${id}`, formData)
         .then(res => {
             console.log(res)
-            
+            window.location.reload()
         })
         .catch(err => {
             console.log(err)
