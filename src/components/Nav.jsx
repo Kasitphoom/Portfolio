@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // images
-import Profile from '../images/20230603_115941.png'
+import Profile from '../images/20240215_145643.png'
 
 const Nav = () => {
     
@@ -36,7 +36,7 @@ const Nav = () => {
     '>
         <div className="nav-title flex gap-4 flex-row items-center cursor-pointer" onClick={() => {window.location.href = "/"}}>
             <div className="
-                profile w-12 h-12 rounded-full bg-line
+                profile w-12 h-12 rounded-full bg-white border-solid border-line border-2
             ">
                 <img src={Profile} alt="" className='rounded-full block w-full h-full object-cover object-center'/>
             </div>
