@@ -1,7 +1,7 @@
 import React from 'react'
 
 // images
-import Profile from '../../../images/20230603_115941.jpg'
+import Profile from '../../../images/20240215_145643.jpg'
 
 const about = () => {
     return (
