@@ -7,7 +7,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // files
-import resume from '../../../assets/Kasitphoom - Resume.pdf'
+import resume from '../../../assets/Kasitphoom_Thowongs_Resume.pdf'
 
 const Welcome = () => {
   return (
